@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<!--
+    WARNING! Make sure that you match all Quasar related
+    tags to the same version! (Below it's "@2.10.1")
+  -->
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet"
+    type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/quasar@2.10.1/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <!-- example of injection point where you write your app template -->
+  <div id="q-app">
+    <div class="row">
+      <input type="date" id="vdate1" name="vdate1" v-model="v01">
+      <input type="date" id="vdate2" name="vdate2" v-model="v02">
+      <button type="button" @click="btn1()">ok</button>
+      <button type="button" @click="btn2()">ok1</button>
+      <button type="button" @click="btn3()">ok2</button>
+    </div>
+    <div id="tabsok" v-if="isshow1">
+      <div class="q-pa-md">
+        <div class="q-gutter-y-md" style="max-width: 600px">
+          <q-card>
+            <q-tabs v-model="tab" dense class="text-grey" active-color="primary" indicator-color="primary"
+              align="justify" narrow-indicator>
+              <q-tab name="tab1" label="報名狀況"></q-tab>
+              <q-tab name="tab2" label="價錢"></q-tab>
+              <q-tab name="tab3" label="旅遊區域"></q-tab>
+              <q-tab name="tab4" label="出發日期"></q-tab>
+              <q-tab name="tab5" label="航空公司"></q-tab>
+              <q-tab name="tab6" label="旅遊天數"></q-tab>
+              <q-tab name="tab7" label="關鍵字"></q-tab>
+            </q-tabs>
+
+            <q-separator></q-separator>
+
+            <q-tab-panels v-model="tab" animated>
+              <q-tab-panel name="tab1">
+                <div class="text-h6">Mails</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-tab-panel>
+
+              <q-tab-panel name="tab2">
+                <div class="text-h6">Alarms</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-tab-panel>
+
+              <q-tab-panel name="tab3">
+                <div class="text-h6">Movies</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-tab-panel>
+
+              <q-tab-panel name="tab4">
+                <div class="text-h6">Movies</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-tab-panel>
+
+              <q-tab-panel name="tab5">
+                <div class="text-h6">Movies</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-tab-panel>
+
+              <q-tab-panel name="tab6">
+                <div class="text-h6">Movies</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-tab-panel>
+
+              <q-tab-panel name="tab7">
+                <div class="text-h6">Movies</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-tab-panel>
+            </q-tab-panels>
+          </q-card>
+        </div>
+      </div>
+    </div>
+    <div id="list_s" v-if="isshow2" style="height:480px;width:800x">
+      <span>搜尋</span>
+      <div class="row">
+        <q-btn @click="btn2" label="X" style="position: absolute;right:0px"></q-btn>
+      </div>
+      <div class="row" style="height:10px"></div>
+      <div class="row">
+        關鍵字
+      </div>
+      <div class="row" style="max-width:800px">
+        <input type="text" id="vstext" name="vstext" v-model="vstext" style="width: 100%;" />
+      </div>
+      <div class="row" style="height: 5px"></div>
+      <div class="row">
+        熱門搜尋: 瑞士 克羅埃西亞 聖壇岩 美西 熱氣球 祕魯 連假 葡萄牙 義大利 埃及 軍樂節 摩洛哥
+      </div>
+      <div class="row" style="height: 5px"></div>
+      <div class="row">
+        國家地區
+      </div>
+      <div class="row" style="height: 5px;"></div>
+      <div class="row" style="max-width: 800px;">
+        <div style="width:20%">日本</div>
+        <div style="width:20%">東歐</div>
+        <div style="width:20%">西歐</div>
+        <div style="width:20%">北歐、南歐</div>
+        <div style="width:20%">島國、美洲、百國</div>
+      </div>
+      <div class="row" style="max-width: 800px;">
+        <div style="width:20%"><input type="checkbox" id="idvc011" v-model="vc011" />九州‧福岡‧鹿兒島</div>
+        <div style="width:20%"><input type="checkbox" id="idvc012" v-model="vc012" />土耳其</div>
+        <div style="width:20%"><input type="checkbox" id="idvc013" v-model="vc013" />英國‧愛爾蘭</div>
+        <div style="width:20%"><input type="checkbox" id="idvc014" v-model="vc014" />北歐多國</div>
+        <div style="width:20%"><input type="checkbox" id="idvc015" v-model="vc015" />韓國</div>
+      </div>
+      <div class="row" style="max-width: 800px;">
+        <div style="width:20%"><input type="checkbox" id="idvc021" v-model="vc021" />關西‧京都‧大阪</div>
+        <div style="width:20%"><input type="checkbox" id="idvc022" v-model="vc022" />奧捷蜜月</div>
+        <div style="width:20%"><input type="checkbox" id="idvc023" v-model="vc023" />英國‧法國</div>
+        <div style="width:20%"><input type="checkbox" id="idvc024" v-model="vc024" />冰島多國</div>
+        <div style="width:20%"><input type="checkbox" id="idvc025" v-model="vc025" />越南</div>
+      </div>
+      <div class="row" style="max-width: 800px;">
+        <div style="width:20%"><input type="checkbox" id="idvc031" v-model="vc031" />北陸‧白川鄉‧立山黑部</div>
+        <div style="width:20%"><input type="checkbox" id="idvc032" v-model="vc032" />奧地利‧捷克</div>
+        <div style="width:20%"><input type="checkbox" id="idvc033" v-model="vc033" />北法‧全法</div>
+        <div style="width:20%"><input type="checkbox" id="idvc034" v-model="vc034" />義大利‧義法</div>
+        <div style="width:20%"><input type="checkbox" id="idvc035" v-model="vc035" />帛琉</div>
+      </div>
+      <div class="row" style="max-width: 800px;">
+        <div style="width:20%"><input type="checkbox" id="idvc041" v-model="vc041" />關東‧東京‧富士山</div>
+        <div style="width:20%"><input type="checkbox" id="idvc042" v-model="vc042" />捷克</div>
+        <div style="width:20%"><input type="checkbox" id="idvc043" v-model="vc043" />南法</div>
+        <div style="width:20%"><input type="checkbox" id="idvc044" v-model="vc044" />北義‧中義‧南義</div>
+        <div style="width:20%"><input type="checkbox" id="idvc045" v-model="vc045" />澳洲‧紐西蘭</div>
+      </div>
+      <div class="row" style="max-width: 800px;">
+        <div style="width:20%"><input type="checkbox" id="idvc051" v-model="vc051" />東北‧仙台‧奧入瀨溪</div>
+        <div style="width:20%"><input type="checkbox" id="idvc052" v-model="vc052" />奧地利</div>
+        <div style="width:20%"><input type="checkbox" id="idvc053" v-model="vc053" />德國‧瑞士</div>
+        <div style="width:20%"><input type="checkbox" id="idvc054" v-model="vc054" />希臘</div>
+        <div style="width:20%"><input type="checkbox" id="idvc055" v-model="vc055" />加拿大</div>
+      </div>
+      <div class="row" style="max-width: 800px;">
+        <div style="width:20%"><input type="checkbox" id="idvc061" v-model="vc061" />北海道‧札幌‧函館</div>
+        <div style="width:20%"><input type="checkbox" id="idvc062" v-model="vc062" />匈牙利‧奧地利‧捷克</div>
+        <div style="width:20%"><input type="checkbox" id="idvc063" v-model="vc063" />瑞士</div>
+        <div style="width:20%"><input type="checkbox" id="idvc064" v-model="vc064" />西班牙</div>
+        <div style="width:20%"><input type="checkbox" id="idvc065" v-model="vc065" />突尼西亞</div>
+      </div>
+      <div class="row" style="max-width: 800px;">
+        <div style="width:20%"><input type="checkbox" id="idvc071" v-model="vc071" />四國‧山陰山陽</div>
+        <div style="width:20%"><input type="checkbox" id="idvc072" v-model="vc072" />波蘭‧斯洛伐克‧匈牙利</div>
+        <div style="width:20%"><input type="checkbox" id="idvc073" v-model="vc073" />德國</div>
+        <div style="width:20%"><input type="checkbox" id="idvc074" v-model="vc074" />葡萄牙</div>
+        <div style="width:20%"><input type="checkbox" id="idvc075" v-model="vc075" />突尼西亞肯亞(領隊)</div>
+      </div>
+      <div class="row" style="max-width: 800px;">
+        <div style="width:20%"><input type="checkbox" id="idvc081" v-model="vc081" />沖繩‧那霸‧瀨長島</div>
+        <div style="width:20%"></div>
+        <div style="width:20%"><input type="checkbox" id="idvc083" v-model="vc083" />東法‧法瑞</div>
+        <div style="width:20%"><input type="checkbox" id="idvc084" v-model="vc084" />克羅埃西亞多國</div>
+        <div style="width:20%"><input type="checkbox" id="idvc085" v-model="vc085" />辛巴威</div>
+      </div>
+      <div class="row" style="max-width: 800px;">
+        <div style="width:20%"></div>
+        <div style="width:20%"></div>
+        <div style="width:20%"></div>
+        <div style="width:20%"><input type="checkbox" id="idvc094" v-model="vc094" />斯洛維尼亞</div>
+        <div style="width:20%"><input type="checkbox" id="idvc095" v-model="vc095" />埃及</div>
+      </div>
+      <div class="row" style="max-width: 800px;">
+        <div style="width:20%"></div>
+        <div style="width:20%"></div>
+        <div style="width:20%"></div>
+        <div style="width:20%"></div>
+        <div style="width:20%"><input type="checkbox" id="idvc0a5" v-model="vc0a5" />杜拜</div>
+      </div>
+      <div class="row" style="max-width: 800px;">
+        <div style="width:20%"></div>
+        <div style="width:20%"></div>
+        <div style="width:20%"></div>
+        <div style="width:20%"></div>
+        <div style="width:20%"><input type="checkbox" id="idvc0b5" v-model="vc0b5" />尼泊爾</div>
+      </div>
+      <div class="row" style="height:15px"></div>
+      <div class="row">出發日期區間</div>
+      <div class="row">出發日期->回程日期</div>
+      <div class="row">
+        <q-date v-model="vdate1" minimal></q-date>
+        <div style="width:30px"></div>
+        <q-date v-model="vdate2" minimal></q-date>
+      </div>
+      <div class="row" style="height:15px"></div>
+      <div class="row">航空公司</div>
+      <div class="row" style="max-width: 800px;">
+        <div style="width:12%"><input type="checkbox" id="idva01" v-model="va01" />長榮航空</div>
+        <div style="width:12%"><input type="checkbox" id="idva02" v-model="va02" />中華航空</div>
+        <div style="width:12%"><input type="checkbox" id="idva03" v-model="va03" />阿聯酋航空</div>
+        <div style="width:12%"><input type="checkbox" id="idva04" v-model="va04" />土耳其航空</div>
+        <div style="width:12%"><input type="checkbox" id="idva05" v-model="va05" />星宇航空</div>
+        <div style="width:12%"><input type="checkbox" id="idva06" v-model="va06" />國泰航空</div>
+        <div style="width:12%"><input type="checkbox" id="idva07" v-model="va07" />新加坡航空</div>
+        <div style="width:12%"><input type="checkbox" id="idva08" v-model="va08" />日本航空</div>
+      </div>
+      <div class="row" style="height:10px"></div>
+      <div class="row" style="max-width: 800px;">
+        <div style="width:12%"><input type="checkbox" id="idva09" v-model="va01" />卡達航空</div>
+        <div style="width:12%"><input type="checkbox" id="idva10" v-model="va02" />肯亞航空</div>
+        <div style="width:12%"><input type="checkbox" id="idva11" v-model="va03" />荷蘭皇家</div>
+      </div>
+      <div class="row" style="height:15px"></div>
+      <div class="row">狀態</div>
+      <div class="row" style="max-width: 800px;">
+        <div style="width:12%"><input type="checkbox" id="idvb01" v-model="vb01" />報名中</div>
+        <div style="width:12%"><input type="checkbox" id="idvb02" v-model="vb02" />候補報名</div>
+        <div style="width:12%"><input type="checkbox" id="idvb03" v-model="vb03" />蜜月團</div>
+        <div style="width:12%"><input type="checkbox" id="idvb04" v-model="vb04" />特惠團</div>
+        <div style="width:12%"><input type="checkbox" id="idvb05" v-model="vb05" />預購</div>
+        <div style="width:12%"><input type="checkbox" id="idvb06" v-model="vb06" />確定出團</div>
+        <div style="width:12%"><input type="checkbox" id="idvb07" v-model="vb07" />熱門團</div>
+      </div>
+      <div class="row" style="height:15px"></div>
+      <div class="row" style="align-items: center">
+        <q-btn color="primary" @click="btn3()" label="搜尋"></q-btn>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add the following at the end of your body tag -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quasar@2.10.1/dist/quasar.umd.prod.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script>
+    /*
+      Example kicking off the UI. Obviously, adapt this to your specific needs.
+      Assumes you have a <div id="q-app"></div> in your <body> above
+     */
+    const app = Vue.createApp({
+      setup() {
+        return {
+        }
+      },
+      data() {
+        return {
+          k01: 'ok frank',
+          v01: '2024-01-01',
+          v02: '2024-03-31',
+          vstext: '',
+          tab: 'tab1',
+          isshow1: false,
+          isshow2: false,
+          vc011: false,
+          vc012: false,
+          vc013: false,
+          vc014: false,
+          vc015: false,
+          vc021: false,
+          vc022: false,
+          vc023: false,
+          vc024: false,
+          vc025: false,
+          vc031: false,
+          vc032: false,
+          vc033: false,
+          vc034: false,
+          vc035: false,
+          vc041: false,
+          vc042: false,
+          vc043: false,
+          vc044: false,
+          vc045: false,
+          vc051: false,
+          vc052: false,
+          vc053: false,
+          vc054: false,
+          vc055: false,
+          vc061: false,
+          vc062: false,
+          vc063: false,
+          vc064: false,
+          vc065: false,
+          vc071: false,
+          vc072: false,
+          vc073: false,
+          vc074: false,
+          vc075: false,
+          vc081: false,
+          vc082: false,
+          vc083: false,
+          vc084: false,
+          vc085: false,
+          vc091: false,
+          vc092: false,
+          vc093: false,
+          vc094: false,
+          vc095: false,
+          vc0a1: false,
+          vc0a2: false,
+          vc0a3: false,
+          vc0a4: false,
+          vc0a5: false,
+          vc0b1: false,
+          vc0b2: false,
+          vc0b3: false,
+          vc0b4: false,
+          vc0b5: false,
+          vdate1: '',
+          vdate2: '',
+          va01: false,
+          va02: false,
+          va03: false,
+          va04: false,
+          va05: false,
+          va06: false,
+          va07: false,
+          va08: false,
+          va09: false,
+          va10: false,
+          va11: false,
+          vb01: false,
+          vb02: false,
+          vb03: false,
+          vb04: false,
+          vb05: false,
+          vb06: false,
+          vb07: false,
+        }
+      },
+      methods: {
+        t1() {
+          alert('test');
+        },
+        btn1() {
+          this.isshow1 = !this.isshow1;
+        },
+        btn2() {
+          this.isshow2 = !this.isshow2;
+        },
+        btn3() {
+          axios.get('http://localhost:5055/test')
+            .then(res => {
+              // 通常 res 會是多項資料，取出需要的部份
+              console.log(res.data);
+            })
+            // err.response 是固定用法
+            .catch(err => {
+              console.log(err.response);
+            })
+        },
+        mounted() {
+        },
+        computed: {
+        },
+        created() {
+          this.v01 = moment().format('YYYY-MM-DD');
+          this.v02 = moment().format('YYYY-MM-DD');
+        },
+      }
+    });
+    app.use(Quasar);
+    app.mount('#q-app');   
+  </script>
+</body>
+
+</html>
